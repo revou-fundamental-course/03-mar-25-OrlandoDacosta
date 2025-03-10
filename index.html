@@ -33,7 +33,7 @@
       <!-- Home Content -->
       <section id="home">
         <header>
-          <h1>Hi <span id="name">USer</span>, Welcome to my Portfolio</h1>
+          <h1>Hi <span id="name-user">User</span>, Welcome to my Portfolio</h1>
           <p class="description">
             Hello and thank you for visiting my portfolio! Here, you'll find a
             collection of my work, skills, and projects that showcase my
@@ -42,7 +42,7 @@
             Feel free to explore, and if you have any questions or collaboration
             ideas, don’t hesitate to reach out. I’d love to connect with you!
           </p>
-          <button id="tombol">Ganti Nama</button>
+          <!-- <button id="tombol">Ganti Nama</button> -->
         </header>
 
         <!-- Banner Autoslide -->
@@ -70,7 +70,11 @@
           <h1>Message Us</h1>
         </header>
         <div class="message-us-content">
-          <form action="" class="form">
+          <form
+            class="form"
+            name="message-form"
+            onsubmit="return validateForm()"
+          >
             <div class="form-content">
               <div class="form-nama">
                 <label class="label-nama" for="nama">Nama</label>
@@ -80,6 +84,8 @@
                   id="nama"
                   type="text"
                   placeholder="Nama"
+                  name="full-name"
+                  
                 />
               </div>
 
@@ -91,23 +97,25 @@
                   id="tanggal"
                   type="date"
                   placeholder="Tanggal Lahir"
+                  name="birth-date"
+                  
                 />
               </div>
 
               <div class="jenis-kelamin">
                 <p class="jenis-kelamin">Jenis Kelamin</p>
                 <span>:</span>
-                <input type="radio" id="laki" value="Laki-laki" />
-                <label for="laki">Laki-laki</label>
-                <input type="radio" id="Perempuan" value="Perempuan" />
-                <label for="Perempuan">Perempuan</label>
+                <input type="radio" id="male" value="male" name="gender" />
+                <label for="male">Laki-laki</label>
+                <input type="radio" id="female" value="female" name="gender" />
+                <label for="female">Perempuan</label>
               </div>
 
               <div class="form-nama">
                 <label class="label-nama" for="pesan">Pesan</label>
                 <span>:</span>
                 <textarea
-                  name="pesan"
+                  name="messages"
                   id="pesan"
                   placeholder="Pesan"
                   class="input-nama"
@@ -115,11 +123,15 @@
                 ></textarea>
               </div>
 
-              <button>Submit</button>
+              <input type="submit" value="submit">
             </div>
           </form>
 
-          <div class="submit-box"></div>
+          <div class="" style="display: flex; flex-direction: column">
+          <p>Nama : <span id="sender-full-name"></span></p>
+          <p>Tanggal Lahir : <span id="sender-birth-date"></span></p>
+          <p>Jenis Kelamin : <span id="sender-gender"></span></p>
+          <p>Pesan : <span id="sender-messages"></span></p>
         </div>
       </section>
     </main>
