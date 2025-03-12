@@ -6,10 +6,7 @@ function replaceName() {
 
 replaceName();
 
-// document.getElementById("tombol").addEventListener("click", function () {
-//   replaceName();
-// });
-
+//form-validate and submit form
 function setSenderUI(name, birthDate, gender, messages) {
   document.getElementById("sender-full-name").innerHTML = name;
   document.getElementById("sender-birth-date").innerHTML = birthDate;
@@ -32,6 +29,8 @@ function validateForm() {
 
   return false;
 }
+
+//banner-slide
 
 var slideIndex = 1;
 showDivs(slideIndex);
